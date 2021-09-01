@@ -5,6 +5,10 @@ function Dialog(props) {
     //  匿名插槽
     <div style={{ border: `3px solid ${props.color || "blue"}` }}>
       {props.children}
+      <div>
+        {/*   具名插槽 btn 组合 */}
+        {props.btn}
+      </div>
     </div>
   );
 }
@@ -20,6 +24,7 @@ function WelcomeDialog() {
 function ThankDialog() {
   const ThankBtn = <Button type="primary">确认</Button>;
   return (
+    // 可以是一个变量，可以是一个组件
     // 传递组件 btn
     <Dialog color="yellow" btn={ThankBtn}>
       <p>Thanks</p>
